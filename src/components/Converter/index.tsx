@@ -108,7 +108,11 @@ export default class Index extends React.PureComponent<{}, IState> {
     };
 
     handleRemovePair = (index: number) => {
-        this.setState(({ pairs }) => ({ pairs: [...pairs.slice(0, index), ...pairs.slice(index + 1, pairs.length)] }));
+        this.setState(({ pairs }) => ({
+            output: null,
+            errors: [],
+            pairs: [...pairs.slice(0, index), ...pairs.slice(index + 1, pairs.length)],
+        }));
     };
 
     render() {
